@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome</h1>
+    </head>
+    <body>
+        <p id="p1">paragraph ID1</p>
+        <p id="p2">paragraph ID2</p>
+        <p id="p3">paragraph ID3</p>
+        <p id="p4">paragraph ID4</p>
+        <button onclick="after()">Enter</button>
+        <script>
+            function after(){
+                var txt1 = "<b>welcome </b>";
+                var txt2 = jQuery("<i></i>").text("To ");
+                var txt3 = document.createElement("strong"); //create new DOM Element and give strong property to that new element.//
+                txt3.innerHTML="jQuery"
+                jQuery("#p4").after(txt1,txt2,txt3);
+            }
+        </script>
+    </body>
+</html>

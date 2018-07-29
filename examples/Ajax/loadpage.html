@@ -1,0 +1,15 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome</h1>
+    </head>
+    <body>
+        <p id="p1">click to load another file</p>
+        <button id="btn1">click</button>
+        <script>
+            jQuery("button").click(function(){
+                jQuery("p").load("data.txt");
+            })
+        </script>
+    </body>
+</html>

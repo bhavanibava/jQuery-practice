@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p id="p1"><b><i>paragraph</i></b> <strong>Tag</strong>:here we perform get operation </p>
+        <p>Name : <input type="text" id="i1" value="bhavani"></p>
+        <button id="btn1">show text</button>
+        <button id="btn2">show html</button>
+        <button id="btn3">get value</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("#btn1").click(function(){
+                    alert('text data : '+jQuery("#p1").text());
+                });
+                jQuery("#btn2").click(function(){
+                    alert('html data : '+jQuery("#p1").html());
+                });
+                jQuery("#btn3").click(function(){
+                    alert('input data : '+jQuery("#i1").val());
+                });
+            })
+        </script>
+    </body>
+</html>

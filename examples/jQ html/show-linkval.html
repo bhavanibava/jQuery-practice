@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>display the link</p>
+        <p><a href="https://welcome.html" id="link1">welcome</a></p>
+        <button id="btn1">show link</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("#btn1").click(function(){
+                    alert("link is: "+jQuery("#link1").attr('href'));
+                });
+            })
+        </script>
+    </body>
+</html>

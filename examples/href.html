@@ -1,0 +1,19 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body> 
+        <p id="p1">paragraph ID1</p>
+        <p id="p2"><a href="#">link1</a>paragraph ID2</p>
+        <p id="p3"><a href="#">link2</a>paragraph ID3</p>
+        <button>click</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("button").click(function(){
+                    jQuery("[href]").hide(200);
+                });
+            })
+        </script>
+    </body>
+</html>

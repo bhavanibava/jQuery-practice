@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>
+            click to hide this page
+        </p>
+        <p>this one also hide while clicking this page</p>
+        <p id="p1">this page can be perform fade toggle operation</p>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('p').click(function(){
+                    jQuery(this).hide();
+                });
+                jQuery('#p1').click(function(){
+                    jQuery(this).fadeToggle();
+                })
+            });
+        </script>
+    </body>
+</html>

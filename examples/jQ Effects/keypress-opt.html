@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p id="p1">paragraph ID1</p>
+        Enter Name : <input type="text">
+        <p>count: <span>0</span></p>
+        <script>
+            i=0;
+            jQuery(document).ready(function(){
+                jQuery("input").keypress(function(){
+                    jQuery('span').text(i +=1);
+                });
+                
+            })
+        </script>
+    </body>
+</html>

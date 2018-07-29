@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p id="p1">Animation</p>
+        <button id="btn1">left Animation</button>
+        <button id="btn2">Animation</button>
+        <button id="btn3">change Height</button><br>
+        <div id="div1" style="width: 50px;height: 50px;position:absolute;background-color: lightblue"></div><br>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("#btn1").click(function(){
+                    jQuery("div").animate({left:"200px"});
+                });
+                jQuery("#btn2").click(function(){
+                   jQuery("div").animate({
+                    left:'100px',
+                    opacity: '0.5',
+                    height:'80px',
+                    width:'100px'
+                    });
+                });
+                jQuery("#btn3").click(function(){
+                    jQuery("div").animate({height:'toggle'});
+                });
+            });
+        </script>
+    </body>
+</html>

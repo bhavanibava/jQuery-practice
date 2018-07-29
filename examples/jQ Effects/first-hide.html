@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>first "p Element"</p>
+        <p id="p1">paragraph ID1</p>
+        <p id="p2">paragraph ID2</p>
+        <p id="p3" class="para3">paragraph ID3</p>
+        <p>last para</p>
+        <button>double click</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("button").click(function(){
+                    jQuery('p:first').hide(1000);
+                });
+                jQuery("p.para3").click(function(){
+                   jQuery("p:last").toggle();
+                })
+            })
+        </script>
+    </body>
+</html>

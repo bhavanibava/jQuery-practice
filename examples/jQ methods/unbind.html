@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>first paragraph,If u click input box then it will shows one button used to show details which are given in that input box</p>
+        <p id="p1">hide page</p> 
+        Name : <input type="text" id="input1">
+        <button id="btn1" style="display:none">click</button>
+        <button id="b1">unbind button</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('input').bind('click',function(){
+                    jQuery('button').show();
+                });
+                jQuery('#btn1').click(function(){
+                    txt=jQuery('#input1').val();
+                    alert("Input : "+txt);
+                });
+                jQuery('#b1').click(function(){
+                    jQuery('#input1').unbind("click");
+                });
+            })
+        </script>
+    </body>
+</html> 

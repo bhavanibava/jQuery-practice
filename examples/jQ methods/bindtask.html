@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>first paragraph,it will hide while click button</p>
+        Name : <input type="text" id="input1">
+        <button style="display:none">click</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('input').bind('keypress',function(){
+                    jQuery('button').show();
+                });
+                jQuery('button').click(function(){
+                    txt=jQuery('input').val();
+                    alert("Input : "+txt);
+                })
+            })
+        </script>
+    </body>
+</html> 

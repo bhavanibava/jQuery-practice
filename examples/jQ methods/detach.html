@@ -1,0 +1,20 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>first paragraph</p>
+        <p id="p1">mouse over to remove this page using detach method and click button to restore Element</p>
+        <button>click</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("#p1").hover(function(){
+                   value=jQuery("#p1").detach();
+                });
+                jQuery("button").click(function(e){
+                    jQuery('p').prepend(value);
+                });
+            })
+        </script>
+</html>

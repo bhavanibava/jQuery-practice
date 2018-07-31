@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <p class="p1">
+            welcome to jQuery<br>
+            <b>Filter Function:</b><br>
+        </p>
+        Name : <input class="txt"><br>
+        Email : <input class="txt"><br>
+        Number : <input class="num" type="number">
+            <p>filter function is used to filter element or class based on given value</p>
+            <button class="btn">click</button>
+        <script>
+            jQuery('document').ready(function(){
+                jQuery("button").click(function(){
+                    jQuery("input").filter('.txt').css("background-color","pink");
+                    jQuery("input").filter('.num').css("background-color","skyblue");
+                    jQuery("p").filter('.p1').css("background-color","violet");
+                })
+            })
+        </script>
+    </body>
+</html>

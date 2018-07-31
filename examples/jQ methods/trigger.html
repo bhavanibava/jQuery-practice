@@ -1,0 +1,22 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>first paragraph,it will show text while click button</p>
+        Name : <input type="text" id="input1" value="Bhavani">
+        <!-- <button id="btn1">click</button> -->
+        <button id="btn2">Enter</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('#input1').select(function(){
+                    alert("Name: "+jQuery('input').val());
+                });
+                jQuery('#btn2').bind('click',function(){
+                    jQuery('input').trigger("select");
+                });
+            })
+        </script>
+    </body>
+</html> 

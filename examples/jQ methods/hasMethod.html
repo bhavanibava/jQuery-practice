@@ -1,0 +1,27 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>jQuery has method</h1>
+    </head>
+    <body>
+        <!-- <p>first paragraph,it will hide while click button</p> -->
+        <p><b>1 first paragraph</b></p>
+        <p class="para"><b>2 second paragraph</b></p>
+        <p class="para3">paragraph number3
+            Name : <input type="text" id="input1" disabled>
+        </p>
+        <button id="btn1"> apply color</button>
+        <button id="btn2">button</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('#btn1').click(function(){
+                    jQuery("p").has("b").css("background-color","skyblue");
+                    jQuery("p").has("input").css("background-color","pink");
+                })
+                jQuery('#btn2').click(function(){
+                    jQuery("p").has("input").fadeOut(500);//has method used to match an element which is child of another element // 
+                })
+            })
+        </script>
+    </body>
+</html> 

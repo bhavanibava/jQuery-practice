@@ -1,19 +1,17 @@
 <html>
     <head>
-        <script src="../lib/jquery-3.3.1.min.js"></script>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
         <h1>welcome to jQuery</h1>
     </head>
     <body>
-        <p>first paragraph,it will hide while click button</p>
         <button>click</button>
         <script>
             jQuery(document).ready(function(){
                 jQuery("button").click(function(e){
-                    jQuery('p').hide(2000);
+                    $.get("data.txt",function(data,status){
+                        alert("Data : "+data+"/nstatus : "+status);
+                    });
                 });
-                jQuery("p").hover(function(){
-                   jQuery("p").toggle();
-                })
             })
         </script>
 </html>

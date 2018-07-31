@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <h1>welcome to jQuery</h1>
+    </head>
+    <body>
+        <p>After finishing input field details, display Add button </p>
+
+        Name : <input type="text" id="txt1" class="input">
+        Age : <input type="number" id="num1" class="input">
+        Email Id : <input type="email" id="id1" class="input">
+        <button class="btn" style="display: none">Add</button>
+        <button id="b1">click</button>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery('#id1').bind('keypress',function(){
+                    jQuery('.btn').show();
+                });
+                jQuery(".btn").click(function(){
+                    jQuery(".input").select();
+                    alert("Name : "+jQuery("#txt1").val()+"\n Age : "+jQuery("#num1").val()+"\n Email : "+jQuery("#id1").val());
+                });
+                jQuery("#b1").click(function(){
+                    jQuery(".input").trigger("select");
+                })
+            })
+        </script>
+    </body>
+</html> 

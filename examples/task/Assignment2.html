@@ -9,7 +9,8 @@
             Description :   <input class="txt" id="d1" type="text">
         </p>
         <button id="b1" class="btn">ADD</button>
-        
+        <button id="b2" class="btn">display</button>
+        <button id="b3" class="btn">Remove</button>
         <div id="tasklist" class="list"></div>
         <div style="background-color: lightgreen" class="list2" id="addlist">Second div:</div>
         <script>
@@ -23,6 +24,15 @@
                     jQuery(".list2").text("value: "+myarray);
                     alert(myarray);
                 });
+                jQuery("#b2").click("click",function() {
+                    jQuery("#tasklist").filter('.list').css("background-color","pink");
+                    alert("successfully highlighted last value of div");
+                });
+                jQuery("#b3").click(function(){
+                    delvalue=myarray.pop();
+                    jQuery(".list").text(myarray);
+                    alert("remove details successfully,Remaining items are : "+myarray);
+                })
             })
         </script>
     </body>

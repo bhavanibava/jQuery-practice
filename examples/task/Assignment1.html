@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+    </head>
+    <body>
+        <h1>Add Tasks</h1>
+        <p>
+            Title       :   <input class="txt" id="t1" type="text">
+            Description :   <input class="txt" id="d1" type="text">
+        </p>
+        <button id="b1" class="btn">ADD</button>
+        <!-- <button id="b2" class="btn">last</button> -->
+        <div id="tasklist" class="list">
+            <p id="#para1"></p>
+        </div>
+        <script>
+            jQuery(document).ready(function(){
+                jQuery("#b1").click(function(){
+                    txt=jQuery("#t1").val();
+                    des=jQuery("#d1").val();
+                    jQuery("#tasklist").append("Title :"+txt+"  Description : "+des+"<p></p>");
+                });
+            })
+        </script>
+    </body>
+</html>

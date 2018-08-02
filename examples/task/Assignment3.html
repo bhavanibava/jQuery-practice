@@ -1,0 +1,31 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="../../lib/bootstrap/css/bootstrap.min.css">
+        <script src="../../lib/jquery-3.3.1.min.js"></script>
+        <style>
+            body{
+                padding: 30px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="div">
+            <form id="form1">
+                <input type="file" class="file" id="f1">
+                <button class="btn" id="b1">+</button>
+            </form>
+        </div>
+        <div class="text-center" id="div2"></div>
+        <button class="btn" id="b2">submit</button>
+        <script>
+            jQuery("#b1").click(function(){
+                jQuery("#div2").append(jQuery("#form1"));
+            });
+            jQuery("#f1").mouseenter(function(){
+                jQuery('#b2').click(function(){
+                    alert("submitted file successfully");
+                });
+            })
+        </script>
+    </body>
+</html>

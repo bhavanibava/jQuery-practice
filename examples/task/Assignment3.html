@@ -15,16 +15,18 @@
                 <button class="btn" id="b1">+</button>
             </form>
         </div>
-        <div class="text-center" id="div2"></div>
+        <div class="div2" id="div2"></div>
         <button class="btn" id="b2">submit</button>
         <script>
-            jQuery("#b1").click(function(){
-                jQuery("#div2").append(jQuery("#form1"));
-            });
-            jQuery("#f1").mouseenter(function(){
-                jQuery('#b2').click(function(){
-                    alert("submitted file successfully");
+            jQuery(document).ready(function(){
+                jQuery("#b1").click(function(){
+                    jQuery("#div2").append(jQuery("#f1"));
                 });
+                jQuery("#f1").mouseenter(function(){
+                    jQuery('#b2').click(function(){
+                        alert("submitted file successfully");
+                    });
+                })
             })
         </script>
     </body>

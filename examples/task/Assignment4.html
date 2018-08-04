@@ -27,15 +27,15 @@
             <div id="modal1" class="modal hide fade">
                 <div class="modal-content">
                     <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <button type="button" class="btn btn-lg close" data-dismiss="modal">&times;</button>
                         <h1>HyperLink</h1>
                     </div>
                     <div class="modal-body">
-                        Link : <input type="text" id="input1">
+                        Link : <input type="text" id="input1" placeholder="Link">
                     </div>
                     <div class="modal-footer">
-                        <button id="addbtn" type="button" class="btn btn-lg">Add</button>
-                        <button type="button" class="close" data-dismiss="modal">cancel</button>
+                        <button id="addbtn" type="button" class="btn btn-info">Add</button>
+                        <button type="button" class="btn btn-lg" data-dismiss="modal">cancel</button>
                     </div>
                 </div>
             </div>
@@ -49,16 +49,26 @@
                     jQuery("#txt").select().css("font-style","italic");
                 });
                 jQuery("#ul").click(function(){
-                    jQuery('#txt').select().css("list-style-type","disc");
+                    jQuery('#txt').select().css("list-style","ul");
                 });
                 jQuery("#ol").click(function(){
-                    jQuery("#txt").select().css("list-style-type","decimal");
+                    jQuery("#txt").select().css("list-style","ol");
                 });
                 jQuery("#link").click(function(){
                     jQuery("#modal1").modal();
                     jQuery("#addbtn").click(function(){
-                        
+                        alert("Added Link successfully");
+                        data=jQuery("#input1").val();
+                        jQuery("#txt").text(data);
                     })
+                });
+                jQuery("#code").click(function(){
+                    datacode=jQuery("#txt").val();
+                    alert("code value: "+datacode);
+                    jQuery("#txt").html("<code>welcome</code>");
+                });
+                jQuery("#table").click(function(){
+                    jQuery("#txt").select();
                 });
             })
         </script>

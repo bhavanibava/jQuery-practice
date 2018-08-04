@@ -10,18 +10,15 @@
     </head>
     <body>
         <div class="div">
-            <form id="form1" class="form-control">
                 <input type="file" class="file" id="f1">
                 <button class="btn btn-info" id="b1">+</button>
-            </form>
-            <div class="div2" id="div2">Append</div>
         </div>
         <div class="div2" id="div2"></div>
         <button class="btn btn-lg" id="b2">submit</button>
         <script>
             jQuery(document).ready(function(){
                 jQuery("#b1").click(function(){
-                    jQuery("#div2").append(jQuery("#f1"));
+                    jQuery("#div2").append(jQuery("<input type='file'>"));
                 });
                 jQuery("#f1").mouseenter(function(){
                     jQuery('#b2').click(function(){

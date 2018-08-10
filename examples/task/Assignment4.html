@@ -17,12 +17,13 @@
                     <a><i id="ol" class="fa fa-list-ol fa-lg fa-fw"></i></a>
                     <a><i id="link" class="fa fa-link fa-lg fa-lg" data-toggle="modal"></i></a>
                     <a><i id="code" class="fa fa-code fa-lg fa-fw"></i></a>
+                    <a><i id="paint" class="fa fa-paint-brush fa-fw fa-lg"></i></a>
                     <a><i id="table" class="fa fa-table fa-lg fa-fw"></i></a>
-                    <a><i id="eye" class="fa fa-eye fa-lg fa-fw" style="padding-left:700px "></i></a>
+                    <a><i id="eye" class="fa fa-eye fa-lg fa-fw" style="padding-left:890px "></i></a>
                 </ul>
             </div>
-            <div class="row-fluid" style="border:solid #E6E6FA 0.3px;height: 250px;">
-                <textarea id="txt" class="command" style="width: 939px; height: 239px; margin: 0px 0px 10px;" placeholder="Leave a comment..." ></textarea>
+            <div class="row-fluid" style="border:solid #E6E6FA 0.3px;height: 260px;">
+                <textarea id="txt" class="command" style="width: 939px; height: 259px; margin: 0px 0px 10px;" placeholder="Leave a comment..." ></textarea>
             </div>
             <div id="modal1" class="modal hide fade">
                 <div class="modal-content">
@@ -32,6 +33,22 @@
                     </div>
                     <div class="modal-body">
                         Link : <input type="text" id="input1" placeholder="Link">
+                    </div>
+                    <div class="modal-footer">
+                        <button id="addbtn" type="button" class="btn btn-info">Add</button>
+                        <button type="button" class="btn btn-lg" data-dismiss="modal">cancel</button>
+                    </div>
+                </div>
+            </div>
+            <div id="modal2" class="modal hide fade">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="btn btn-lg close" data-dismiss="modal">&times;</button>
+                        <h1>Table</h1>
+                    </div>
+                    <div class="modal-body">
+                        Rows : <input type="number" id="input2" placeholder="No.of.rows">
+                        Cols : <input type="number" id="input3" placeholder="No.of.cols">
                     </div>
                     <div class="modal-footer">
                         <button id="addbtn" type="button" class="btn btn-info">Add</button>
@@ -57,18 +74,28 @@
                 jQuery("#link").click(function(){
                     jQuery("#modal1").modal();
                     jQuery("#addbtn").click(function(){
-                        alert("Added Link successfully");
                         data=jQuery("#input1").val();
-                        jQuery("#txt").text(data);
+                        txt=jQuery("#txt").val();
+                        alert(txt);
+                        var _link = '<a href="' + data + '>' + txt +'</a>';
+                        jQuery("#txt").html(_link).css("color","pink");
+
                     })
                 });
                 jQuery("#code").click(function(){
                     datacode=jQuery("#txt").val();
-                    alert("code value: "+datacode);
-                    jQuery("#txt").html("<code>welcome</code>");
+                    code='<code>'+datacode+'</code>'
+                    // alert("code value: "+datacode);
+                    jQuery("#txt").html(code).css("color","pink");
+                });
+                jQuery("#paint").click(function(){
+                    jQuery("#txt").css("color","green");
                 });
                 jQuery("#table").click(function(){
-                    jQuery("#txt").select();
+                    jQuery("#modal2").modal();
+                });
+                jQuery("#eye").click(function(){
+                    var value=window.open("./file1.html");
                 });
             })
         </script>

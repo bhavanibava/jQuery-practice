@@ -41,15 +41,18 @@
                     data = myStr.split(" ");
                     line = myStr.split(".");
                     var length = data.length;
-                    alert("searching data : "+data+"and len :"+length);
-                    for(var i=0;i<length;i++){
+                    var lineCount = line.length;
+                    alert("len and lineCount :"+length+" "+lineCount);
+                    for(var i=0;i<lineCount;i++){
                         var lineData = line[i];
                         lineOfWord = lineData.split(" ")
-                        if(searchData==lineOfWord[i]){
-                            var matchedDataNo = i;
-                            alert("line[i] number = "+i);
-                            jQuery("#divId2").append("data of line : "+line[i]+" number: "+matchedDataNo+" ");
-                        } 
+                        for(var j=0;j<length;j++){
+                            if(searchData==lineOfWord[j]){
+                                var matchedDataLine = line[i];
+                                alert("line[i] number = "+i);
+                                jQuery("#divId2").append("searched data: "+searchData+"  "+"dataLine : "+line[i]+"<br>");
+                            } 
+                        }
                     };
                 })
             })

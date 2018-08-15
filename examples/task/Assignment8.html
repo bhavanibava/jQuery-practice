@@ -35,17 +35,15 @@
                 jQuery("#buttonId").click(function(){
                     var searchData=jQuery("#inputSeach").val()
                     var myStr = jQuery("#paragraphId").text();
-                    var data = [];
                     var line = [];
                     var lineOfWord = [];
-                    data = myStr.split(" ");
                     line = myStr.split(".");
-                    var length = data.length;
                     var lineCount = line.length;
-                    alert("len and lineCount :"+length+" "+lineCount);
+                    // alert("len and lineCount :"+length+" "+lineCount);
                     for(var i=0;i<lineCount;i++){
                         var lineData = line[i];
-                        lineOfWord = lineData.split(" ")
+                        lineOfWord = lineData.split(" ");
+                        var length = lineOfWord.length;
                         for(var j=0;j<length;j++){
                             if(searchData==lineOfWord[j]){
                                 var matchedDataLine = line[i];

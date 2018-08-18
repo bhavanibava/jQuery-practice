@@ -23,8 +23,9 @@
                 </ul>
             </div>
             <div class="row-fluid" style="border:solid #E6E6FA 0.3px;height: 260px;">
-                <textarea id="txt" class="command" style="width: 939px; height: 259px; margin: 0px 0px 10px;" placeholder="Leave a comment..." ></textarea>
+                <textarea id="text" class="command" style="width: 939px; height: 259px; margin: 0px 0px 10px;" placeholder="Leave a comment..." ></textarea>
             </div>
+            <!-- modal for HyperLink -->
             <div id="modal1" class="modal hide fade">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -32,14 +33,15 @@
                         <h1>HyperLink</h1>
                     </div>
                     <div class="modal-body">
-                        Link : <input type="text" id="input1" placeholder="Link">
+                        Link : <input type="text" id="linkText" placeholder="Link">
                     </div>
                     <div class="modal-footer">
-                        <button id="addbtn" type="button" class="btn btn-info">Add</button>
+                        <button id="addButton" type="button" class="btn btn-info">Add</button>
                         <button type="button" class="btn btn-lg" data-dismiss="modal">cancel</button>
                     </div>
                 </div>
             </div>
+            <!-- Table popup -->
             <div id="modal2" class="modal hide fade">
                 <div class="modal-content">
                     <div class="modal-header">
@@ -47,11 +49,11 @@
                         <h1>Table</h1>
                     </div>
                     <div class="modal-body">
-                        Rows : <input type="number" id="input2" placeholder="No.of.rows">
-                        Cols : <input type="number" id="input3" placeholder="No.of.cols">
+                        Rows : <input type="number" id="rowNo" placeholder="No.of.rows">
+                        Columns : <input type="number" id="colNo" placeholder="No.of.cols">
                     </div>
                     <div class="modal-footer">
-                        <button id="addbtn" type="button" class="btn btn-info">Add</button>
+                        <button id="addTable" type="button" class="btn btn-info">AddTables</button>
                         <button type="button" class="btn btn-lg" data-dismiss="modal">cancel</button>
                     </div>
                 </div>
@@ -60,39 +62,51 @@
         <script>
             jQuery(document).ready(function(){
                 jQuery("#bold").click(function(){
-                    jQuery("#txt").select().css("font-weight","bold");
+                    jQuery("#text").select().css("font-weight","bold");
                 });
                 jQuery("#italic").click(function(){
-                    jQuery("#txt").select().css("font-style","italic");
+                    jQuery("#text").select().css("font-style","italic");
                 });
                 jQuery("#ul").click(function(){
-                    jQuery('#txt').select().css("list-style","ul");
+                    jQuery('#text').select().css("list-style","ul");
                 });
                 jQuery("#ol").click(function(){
-                    jQuery("#txt").select().css("list-style","ol");
+                    jQuery("#text").select().css("list-style","ol");
                 });
                 jQuery("#link").click(function(){
                     jQuery("#modal1").modal();
-                    jQuery("#addbtn").click(function(){
-                        data=jQuery("#input1").val();
-                        txt=jQuery("#txt").val();
-                        alert(txt);
-                        var _link = '<a href="' + data + '>' + txt +'</a>';
-                        jQuery("#txt").html(_link).css("color","pink");
+                    jQuery("#addButton").click(function(){
+                        data=jQuery("#linkText").val();
+                        text=jQuery("#text").val();
+                        alert(text);
+                        var _link = '<a href="' + data + '>' + text +'</a>';
+                        jQuery("#text").html(_link).css("color","pink");
 
                     })
                 });
                 jQuery("#code").click(function(){
-                    datacode=jQuery("#txt").val();
+                    datacode=jQuery("#text").val();
                     code='<code>'+datacode+'</code>'
                     // alert("code value: "+datacode);
-                    jQuery("#txt").html(code).css("color","pink");
+                    jQuery("#text").html(code).css("color","pink");
                 });
                 jQuery("#paint").click(function(){
-                    jQuery("#txt").css("color","green");
+                    jQuery("#text").css("color","green");
                 });
                 jQuery("#table").click(function(){
                     jQuery("#modal2").modal();
+                    jQuery("#addTable").click(function(){
+                        var rowCount = jQuery("#rowNo").val();
+                        var columCount = jQuery("#colNo").val();
+                        // var addtable 
+                        jQuery("#text").append([
+                            '<table>',
+                                '<tr>',
+                                    '<td></td>',
+                                '<tr>',
+                            '</table>'
+                        ].join(''));
+                    })
                 });
                 jQuery("#eye").click(function(){
                     var value=window.open("./file1.html");

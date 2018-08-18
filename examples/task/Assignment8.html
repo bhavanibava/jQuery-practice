@@ -15,7 +15,7 @@
 
                 An unbiased (representative) sample is a set of objects chosen from a complete sample using a selection process that does not depend on the properties of the objects.[4] For example, an unbiased sample of Australian men taller than 2m might consist of a randomly sampled subset of 1% of Australian males taller than 2m. But one chosen from the electoral register might not be unbiased since, for example, males aged under 18 will not be on the electoral register. In an astronomical context, an unbiased sample might consist of that fraction of a complete sample for which data are available, provided the data availability is not biased by individual source properties.  
 
-                The best way to avoid a biased or unrepresentative sample is to select a random sample, also known as a probability sample. A random sample is defined as a sample where each individual member of the population has a known, non-zero chance of being selected as part of the sample.[5] Several types of random samples are simple random samples, systematic samples, stratified random samples, and cluster random samples.<p id="pageId1" style="display: none">...</p>
+                The best way to avoid a biased or unrepresentative sample is to select a random sample, also known as a probability sample. A random sample is defined as a sample where each individual member of the population has a known, non-zero chance of being selected as part of the sample.[5] Several types of random samples are simple random samples, systematic samples, stratified random samples, and cluster random samples.
             </p>
             <button id="button1" class="btn">filterData</button>
         </div>
@@ -26,7 +26,7 @@
                     var myStr=jQuery("#paragraphId").text();
                     var filterData = myStr.trim().substr(0,300);
                     var len = filterData.length;
-                    alert("length of paragraph without space : "+len);
+                    // alert("length of paragraph without space : "+len);
                     jQuery("#paragraphId").text(filterData+"...");
                     jQuery("#paragraphId").click(function(){
                         jQuery("#paragraphId").text(myStr);
@@ -46,7 +46,7 @@
                         var length = lineOfWord.length;
                         for(var j=0;j<length;j++){
                             if(searchData==lineOfWord[j]){
-                                var matchedDataLine = line[i];
+                                // var matchedDataLine = line[i];
                                 alert("line[i] number = "+i);
                                 jQuery("#divId2").append("searched data: "+searchData+"  "+"dataLine : "+line[i]+"<br>");
                             } 
